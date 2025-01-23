@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+const title = "Je repond au nomme de DAK";
+const style = {color: 'green', backgroundColor: 'blue'};
 function App() {
-  const [count, setCount] = useState(0)
+  // return <div>
+  //   <h1 id ="title" className="title">Bonjour Les gens</h1>
+  //   <p>
+  //     Bonjour j'espere que vous etes en forme.
+  //     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ratione doloremque corrupti atque nam laudantium non sunt, consequatur odit tenetur soluta rem veritatis, reiciendis quaerat ipsum. Expedita ullam ipsa sunt!
+  //   </p>
+  // </div>
+  //ou comme ça
+  // return <Fragment>
+  //   <h1 id="title" className="title">Bonjour à vous tous</h1>
+  //   <p>
+  //     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel eveniet deleniti iusto ad, enim commodi temporibus natus quo quos voluptas esse ut rerum neque? Perferendis eius perspiciatis deleniti pariatur modi?
+  //   </p>
+  // </Fragment>
+  //ou comme ça
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const lorsDuClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log(e);
+    alert("J'ai cliqué sur le titre");
+  }
+  return <>
+    <h1 onClick={lorsDuClick} id="title" className="title" style={style}>Bonjour à vous tous. {title}</h1>
+    <input type="text" className="text" id="text" />
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel eveniet deleniti iusto ad, enim commodi temporibus natus quo quos voluptas esse ut rerum neque? Perferendis eius perspiciatis deleniti pariatur modi?
+    </p>
+  </>
 }
 
 export default App
